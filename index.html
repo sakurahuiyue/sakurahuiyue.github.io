@@ -474,6 +474,162 @@
 
 
   
+    <article id="post-Unity发布WebGL后跳转页面的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">Unity发布WebGL后跳转页面的问题Unity中LitJson的使用认识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Unity发布WebGL后跳转页面的问题"><a href="#Unity发布WebGL后跳转页面的问题" class="headerlink" title="Unity发布WebGL后跳转页面的问题"></a>Unity发布WebGL后跳转页面的问题</h1><p>最近在做的一个实验平台的项目，需要自己写一个在线的编译器，但是由于WebGL的特殊性，无法在Unity内部实现这个编译器，然后只能房子啊另一个页面上，用页面跳转来实现，但是遇到了问题</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application.OpenURL(codeUrl);</span><br></pre></td></tr></table></figure>
+<p>这是Unity提供的跳转方法，在编辑器中跳转没发现问题。然后，导出WebGL后发现这方法是<strong>在本页面内跳转</strong>，而我需要的是<strong>打开新页面</strong>，有点坑。<br>后来选择在Unity中调JS的方法来解决，</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript source code</span></span><br><span class="line">mergeInto(LibraryManager.library,</span><br><span class="line">    &#123;</span><br><span class="line">        Test: function (str) &#123;</span><br><span class="line">            window.open(Pointer_stringify(str));</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>将这个<strong>JS文件的后缀名改为.jslib并放在Assets/Plugins目录下</strong></p>
+        
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unity3d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Unity中对某个值的变化进行监听" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC/">Unity中对某个值的变化进行监听Unity中LitJson的使用认识</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC/" class="archive-article-date">
+  	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<a href="Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC">TOC</a><br>UIManager中监听单例的GameManager中的state的变化并显示至页面</p>
+        
+          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unity3d</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -567,11 +723,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color3">Unity3d</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Unity3d</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
