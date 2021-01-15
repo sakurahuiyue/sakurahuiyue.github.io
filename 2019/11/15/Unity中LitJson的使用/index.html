@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | Blog of Sakurahuiyue</title>
+  <title>Unity中LitJson的使用认识Git | Blog of Sakurahuiyue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog of Sakurahuiyue">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="Unity中LitJson的使用前段时间结束了一个有关虚拟仿真实验的项目，项目中与数据服务器的数据传输主要是以Json格式来完成的。而在Unity中使用LitJson插件（提取码：sjij）可以较好地进行数据解析。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity中LitJson的使用认识Git">
+<meta property="og:url" content="http://example.com/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Blog of Sakurahuiyue">
+<meta property="og:description" content="Unity中LitJson的使用前段时间结束了一个有关虚拟仿真实验的项目，项目中与数据服务器的数据传输主要是以Json格式来完成的。而在Unity中使用LitJson插件（提取码：sjij）可以较好地进行数据解析。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191115225411531.png">
+<meta property="article:published_time" content="2019-11-15T14:57:15.000Z">
+<meta property="article:modified_time" content="2021-01-15T15:45:53.241Z">
 <meta property="article:author" content="Sakurahuiyue">
+<meta property="article:tag" content="Unity3d">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191115225411531.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog of Sakurahuiyue" type="application/atom+xml">
   
@@ -150,125 +157,196 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Unity中LitJson的使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/15/%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2021-01-15T07:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/15/%E9%9A%8F%E7%AC%94/">随笔</a>
+    <h1 class="article-title" itemprop="name">
+      Unity中LitJson的使用认识Git
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/15/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2021-01-15T04:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-15</time>
+        
+        <a href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/15/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Unity中LitJson的使用"><a href="#Unity中LitJson的使用" class="headerlink" title="Unity中LitJson的使用"></a>Unity中LitJson的使用</h2><p>前段时间结束了一个有关虚拟仿真实验的项目，项目中与数据服务器的数据传输主要是以Json格式来完成的。<br>而在Unity中使用<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ticdrGldrnmYxeXO6tPbLw">LitJson插件</a>（提取码：sjij）可以较好地进行数据解析。</p>
+<a id="more"></a>
+<h3 id="一、来自服务器的数据的解析"><a href="#一、来自服务器的数据的解析" class="headerlink" title="一、来自服务器的数据的解析"></a>一、来自服务器的数据的解析</h3><p>对于从服务器请求的反馈数据，如</p>
+<blockquote>
+<p>{“count”:0,”code”:0,”msg”:””,”data”:[{“homeName”:”myhome”,”homeNum”:”1573425270198”},<br>……<br>{“homeName”:”s”,”homeNum”:”1573528008125”}]}</p>
+</blockquote>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JsonData jsonData = JsonMapper.ToObject(www.text);</span><br><span class="line">   <span class="built_in">string</span> msg = (<span class="built_in">string</span>)jsonData[<span class="string">&quot;msg&quot;</span>];</span><br><span class="line">   JsonData jd = jsonData[<span class="string">&quot;data&quot;</span>];</span><br><span class="line">   <span class="built_in">string</span> data = jd.ToJson();</span><br><span class="line">   GameManager.GetInstance.home = JsonMapper.ToObject&lt;MyHome&gt;(data);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>实体类解析</li>
+</ol>
+<p>这里由于数据比较多，我先定义了实体类MyHome再从反馈的Json数据中取出”data”部分，并使用LitJson提供的JsonMapper.ToObject<T>()转换成了我需要的实体类对象，如此一来可以从对象中取得我要的所有值。</p>
+<ol start="2">
+<li>直接取值</li>
+</ol>
+<p>另一种更一般性的取值方式，根据我们所需要的字段定向取值，如</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JsonData jsonData = JsonMapper.ToObject(www.text);</span><br><span class="line"><span class="comment">//取出respond中的code值，注意是int类型</span></span><br><span class="line">   <span class="built_in">int</span> code = (<span class="built_in">int</span>)jsonData[<span class="string">&quot;code&quot;</span>];</span><br><span class="line">   <span class="comment">//取出respond中的msg值</span></span><br><span class="line">   <span class="built_in">string</span> msg = (<span class="built_in">string</span>)jsonData[<span class="string">&quot;msg&quot;</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="二、向服务器发送Json数据"><a href="#二、向服务器发送Json数据" class="headerlink" title="二、向服务器发送Json数据"></a>二、向服务器发送Json数据</h3><ol>
+<li>对象转Json</li>
+</ol>
+<p>在这个项目中由于我建立了实体类来封装数据，所以在LitJson的帮助下只需要一句即可完成对象转Json</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> homeJson = JsonMapper.ToJson(GameManager.GetInstance.home);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>拼接字符串<br>使用JsonWriter按照约定格式来拼接所需要的字符串。</li>
+</ol>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">WriterJson</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        JsonWriter writer = <span class="keyword">new</span> JsonWriter(sb);</span><br><span class="line"></span><br><span class="line">        writer.WriteArrayStart();</span><br><span class="line">        writer.Write(<span class="number">1</span>);</span><br><span class="line">        writer.Write(<span class="number">2</span>);</span><br><span class="line">        writer.Write(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        writer.WriteObjectStart();</span><br><span class="line">        writer.WritePropertyName(<span class="string">&quot;color&quot;</span>);</span><br><span class="line">        writer.Write(<span class="string">&quot;blue&quot;</span>);</span><br><span class="line">        writer.WriteObjectEnd();</span><br><span class="line"></span><br><span class="line">        writer.WriteArrayEnd();</span><br><span class="line"></span><br><span class="line">        Debug.Log(sb.ToString());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20191115225411531.png" alt="在这里插入图片描述"><br>ps： JsonReader 与 JsonWriter这两种类型实际上是该库的基础，并且JsonMapper类型建立在它们之上，所以开发人员可以将JsonReader和JsonWriter类视为LitJSON的低级编程接口。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unity3d</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E8%AE%A4%E8%AF%86Git/" class="archive-article-date">
-  	<time datetime="2021-01-01T09:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/01/01/%E8%AE%A4%E8%AF%86Git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          认识Git
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E8%AE%A4%E8%AF%86Git/">认识Git</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -291,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
