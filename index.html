@@ -87,6 +87,10 @@
 		        
 			</div>
 		</nav>
+		<!--左侧添加网易云音乐外链-->
+		<!-- <div style="position:absolute; bottom:120px left:auto; width:85%">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=1484564378&auto=1&height=66"></iframe>
+			</div>		 -->
 	</header>		
 </div>
 
@@ -398,19 +402,19 @@
 
 
   
-    <article id="post-Unity发布WebGL后跳转页面的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Unity中LitJson的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">Unity发布WebGL后跳转页面的问题</a>
+      <a class="article-title" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/">Unity中LitJson的使用</a>
     </h1>
   
 
         
-        <a href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+        <a href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
         
@@ -418,13 +422,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Unity发布WebGL后跳转页面的问题"><a href="#Unity发布WebGL后跳转页面的问题" class="headerlink" title="Unity发布WebGL后跳转页面的问题"></a>Unity发布WebGL后跳转页面的问题</h1><p>最近在做的一个实验平台的项目，需要自己写一个在线的编译器，但是由于WebGL的特殊性，无法在Unity内部实现这个编译器，然后只能房子啊另一个页面上，用页面跳转来实现，但是遇到了问题</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application.OpenURL(codeUrl);</span><br></pre></td></tr></table></figure>
-<p>这是Unity提供的跳转方法，在编辑器中跳转没发现问题。然后，导出WebGL后发现这方法是<strong>在本页面内跳转</strong>，而我需要的是<strong>打开新页面</strong>，有点坑。<br>后来选择在Unity中调JS的方法来解决，</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript source code</span></span><br><span class="line">mergeInto(LibraryManager.library,</span><br><span class="line">    &#123;</span><br><span class="line">        Test: function (str) &#123;</span><br><span class="line">            window.open(Pointer_stringify(str));</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<p>将这个<strong>JS文件的后缀名改为.jslib并放在Assets/Plugins目录下</strong></p>
+        <h2 id="Unity中LitJson的使用"><a href="#Unity中LitJson的使用" class="headerlink" title="Unity中LitJson的使用"></a>Unity中LitJson的使用</h2><p>前段时间结束了一个有关虚拟仿真实验的项目，项目中与数据服务器的数据传输主要是以Json格式来完成的。<br>而在Unity中使用<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ticdrGldrnmYxeXO6tPbLw">LitJson插件</a>（提取码：sjij）可以较好地进行数据解析。</p>
         
-          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
+          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
         
       
 
@@ -448,7 +448,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -554,19 +554,19 @@
 
 
   
-    <article id="post-Unity中LitJson的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Unity发布WebGL后跳转页面的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/">Unity中LitJson的使用</a>
+      <a class="article-title" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">Unity发布WebGL后跳转页面的问题</a>
     </h1>
   
 
         
-        <a href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        <a href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
 </a>
         
@@ -574,9 +574,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Unity中LitJson的使用"><a href="#Unity中LitJson的使用" class="headerlink" title="Unity中LitJson的使用"></a>Unity中LitJson的使用</h2><p>前段时间结束了一个有关虚拟仿真实验的项目，项目中与数据服务器的数据传输主要是以Json格式来完成的。<br>而在Unity中使用<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ticdrGldrnmYxeXO6tPbLw">LitJson插件</a>（提取码：sjij）可以较好地进行数据解析。</p>
+        <h1 id="Unity发布WebGL后跳转页面的问题"><a href="#Unity发布WebGL后跳转页面的问题" class="headerlink" title="Unity发布WebGL后跳转页面的问题"></a>Unity发布WebGL后跳转页面的问题</h1><p>最近在做的一个实验平台的项目，需要自己写一个在线的编译器，但是由于WebGL的特殊性，无法在Unity内部实现这个编译器，然后只能房子啊另一个页面上，用页面跳转来实现，但是遇到了问题</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application.OpenURL(codeUrl);</span><br></pre></td></tr></table></figure>
+<p>这是Unity提供的跳转方法，在编辑器中跳转没发现问题。然后，导出WebGL后发现这方法是<strong>在本页面内跳转</strong>，而我需要的是<strong>打开新页面</strong>，有点坑。<br>后来选择在Unity中调JS的方法来解决，</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript source code</span></span><br><span class="line">mergeInto(LibraryManager.library,</span><br><span class="line">    &#123;</span><br><span class="line">        Test: function (str) &#123;</span><br><span class="line">            window.open(Pointer_stringify(str));</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>将这个<strong>JS文件的后缀名改为.jslib并放在Assets/Plugins目录下</strong></p>
         
-          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
         
       
 
@@ -600,7 +604,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/15/Unity%E4%B8%ADLitJson%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -641,7 +645,7 @@
     <div id="footer-info">
     	<div class="footer-left">
     		&copy; 2021 Sakurahuiyue
-    	</div>
+		</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
@@ -727,11 +731,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
               </li>
             
             <div class="clearfix"></div>
