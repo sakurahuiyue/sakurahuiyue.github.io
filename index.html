@@ -190,15 +190,9 @@
         <h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><h2 id="1-1-Flask框架"><a href="#1-1-Flask框架" class="headerlink" title="1.1 Flask框架"></a>1.1 Flask框架</h2><h3 id="1-1-1概述"><a href="#1-1-1概述" class="headerlink" title="1.1.1概述"></a>1.1.1概述</h3><blockquote>
 <p>Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。</p>
 </blockquote>
-<h3 id="1-1-2-构成组件"><a href="#1-1-2-构成组件" class="headerlink" title="1.1.2 构成组件"></a>1.1.2 构成组件</h3><blockquote>
-<p>1、route策略</p>
-<p>2、render_template渲染</p>
-</blockquote>
-<p><strong>向页面传递基本变量</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIndex</span>():</span></span><br><span class="line">    <span class="comment"># 普通变量</span></span><br><span class="line">    time = datetime.date.today()</span><br><span class="line">    <span class="comment"># 列表变量</span></span><br><span class="line">    nameList = [<span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Andy&quot;</span>, <span class="string">&quot;Tom&quot;</span>]</span><br><span class="line">    <span class="comment"># 字典变量</span></span><br><span class="line">    gradeDic = &#123;<span class="string">&quot;Amy&quot;</span>: <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Andy&quot;</span>: <span class="string">&quot;B&quot;</span>, <span class="string">&quot;Tom&quot;</span>: <span class="string">&quot;C&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, time=time, nameList=nameList, gradeDic=gradeDic)</span><br></pre></td></tr></table></figure>
-<p><strong>提交表单内容</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表单提交</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/test/register&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRegister</span>():</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回结果</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/result&#x27;</span>, methods=[<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;GET&quot;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getResult</span>():</span></span><br><span class="line">    print(<span class="string">&quot;requestType:&quot;</span> + request.method)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        result = request.form</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/result.html&quot;</span>, result=result)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/#more">more >></a>
+        
       
 
       
@@ -278,28 +272,6 @@
         <h1 id="Python爬虫"><a href="#Python爬虫" class="headerlink" title="Python爬虫"></a>Python爬虫</h1><h2 id="1-1-什么是爬虫"><a href="#1-1-什么是爬虫" class="headerlink" title="1.1 什么是爬虫"></a>1.1 什么是爬虫</h2><blockquote>
 <p><strong>爬虫</strong>：一段自动抓取互联网信息的程序，从互联网上抓取对于我们有价值的信息。</p>
 </blockquote>
-<h2 id="1-2-爬虫架构"><a href="#1-2-爬虫架构" class="headerlink" title="1.2 爬虫架构"></a>1.2 爬虫架构</h2><blockquote>
-<p>爬虫架构主要由五部分组成，具体构成情况如下：</p>
-<p>1、<strong>调度器</strong>     </p>
-<p>-&gt;    负责<strong>调度协调</strong>工作</p>
-<p>2、<strong>URL管理器</strong>     </p>
-<p>-&gt;    <strong>管理控制</strong>防止重复抓取和循环抓取工作，</p>
-<p>​    其主要有内存、数据库和缓存数据库三种实现方式</p>
-<p>3、<strong>网页下载器</strong></p>
-<p>-&gt;    传入URL地址下载网页-网页转换为字符串，</p>
-<p>​    urllib官方基础模块</p>
-<p>4、<strong>网页解析器</strong></p>
-<p>-&gt;    对网页字符串进行解析，按照一定要求提取信息</p>
-<p>​    <strong>正则表达式解析</strong></p>
-<p>​    <strong>DOM树解析</strong></p>
-<p>​        html.parser</p>
-<p>​        beautifulsoup</p>
-<p>​        lxml</p>
-<p>5、<strong>应用程序</strong></p>
-<p>就是从网页中提取的有用数据组成的一个应用。</p>
-</blockquote>
-<p>调度器协调工作的过程，如图所示</p>
-<p><img src="Python%E7%88%AC%E8%99%AB.assets/20170427113109368.png" alt="img"></p>
         
           <a class="article-more-a" href="/2021/07/21/Python%E7%88%AC%E8%99%AB/#more">more >></a>
         
@@ -330,84 +302,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/07/21/Python%E7%88%AC%E8%99%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-摄影笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/19/%E6%91%84%E5%BD%B1%E7%AC%94%E8%AE%B0/">日常</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/19/%E6%91%84%E5%BD%B1%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2021-06-19T04:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="title1"><a href="#title1" class="headerlink" title="title1"></a>title1</h1><h2 id="title2"><a href="#title2" class="headerlink" title="title2"></a>title2</h2><p>有时真的很羡慕读书之后那种目标明确，能够坚定信息朝着一个已知目的地拼搏的感觉。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">日常</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/19/%E6%91%84%E5%BD%B1%E7%AC%94%E8%AE%B0/">展开全文 >></a>
         </p>
       
 
@@ -1010,10 +904,86 @@
 
 
   
+    <article id="post-Unity发布WebGL后跳转页面的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">Unity发布WebGL后跳转页面的问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2019-11-15T14:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="项目场景"><a href="#项目场景" class="headerlink" title="项目场景"></a>项目场景</h1><p>最近在做的一个实验平台的项目，需要自己写一个在线的编译器，但是由于WebGL的特殊性，无法在Unity内部实现这个编译器，然后只能放置在另一个页面上，用页面跳转来实现，但是遇到了问题。</p>
+        
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unity3d</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疑难杂症</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/15/Unity%E5%8F%91%E5%B8%83WebGL%E5%90%8E%E8%B7%B3%E8%BD%AC%E9%A1%B5%E9%9D%A2%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -1155,14 +1125,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
             
             <div class="clearfix"></div>

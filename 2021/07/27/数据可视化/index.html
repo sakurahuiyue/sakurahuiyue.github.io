@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Python爬虫 | Blog of Sakurahuiyue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。  1.1.2 构成组件 1、route策略 2、render_template渲染  向页面传递基本变量 123456789@app.route(&amp;#x27;&#x2F;&amp;#x27;)def getIndex():    # 普通变量    time">
+  <meta name="description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫">
 <meta property="og:url" content="http://example.com/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/index.html">
 <meta property="og:site_name" content="Blog of Sakurahuiyue">
-<meta property="og:description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。  1.1.2 构成组件 1、route策略 2、render_template渲染  向页面传递基本变量 123456789@app.route(&amp;#x27;&#x2F;&amp;#x27;)def getIndex():    # 普通变量    time">
+<meta property="og:description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-27T02:43:15.000Z">
-<meta property="article:modified_time" content="2021-07-27T08:14:38.423Z">
+<meta property="article:modified_time" content="2021-07-27T14:49:28.924Z">
 <meta property="article:author" content="Sakurahuiyue">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="数据分析">
@@ -194,6 +194,8 @@
         <h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><h2 id="1-1-Flask框架"><a href="#1-1-Flask框架" class="headerlink" title="1.1 Flask框架"></a>1.1 Flask框架</h2><h3 id="1-1-1概述"><a href="#1-1-1概述" class="headerlink" title="1.1.1概述"></a>1.1.1概述</h3><blockquote>
 <p>Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。</p>
 </blockquote>
+<a id="more"></a>
+
 <h3 id="1-1-2-构成组件"><a href="#1-1-2-构成组件" class="headerlink" title="1.1.2 构成组件"></a>1.1.2 构成组件</h3><blockquote>
 <p>1、route策略</p>
 <p>2、render_template渲染</p>
@@ -202,6 +204,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIndex</span>():</span></span><br><span class="line">    <span class="comment"># 普通变量</span></span><br><span class="line">    time = datetime.date.today()</span><br><span class="line">    <span class="comment"># 列表变量</span></span><br><span class="line">    nameList = [<span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Andy&quot;</span>, <span class="string">&quot;Tom&quot;</span>]</span><br><span class="line">    <span class="comment"># 字典变量</span></span><br><span class="line">    gradeDic = &#123;<span class="string">&quot;Amy&quot;</span>: <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Andy&quot;</span>: <span class="string">&quot;B&quot;</span>, <span class="string">&quot;Tom&quot;</span>: <span class="string">&quot;C&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, time=time, nameList=nameList, gradeDic=gradeDic)</span><br></pre></td></tr></table></figure>
 <p><strong>提交表单内容</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表单提交</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/test/register&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRegister</span>():</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回结果</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/result&#x27;</span>, methods=[<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;GET&quot;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getResult</span>():</span></span><br><span class="line">    print(<span class="string">&quot;requestType:&quot;</span> + request.method)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        result = request.form</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/result.html&quot;</span>, result=result)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>未完待续……</strong></p>
 
       
 
@@ -509,14 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
               </li>
             
             <div class="clearfix"></div>
