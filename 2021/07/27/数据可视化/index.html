@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: hexo | Blog of Sakurahuiyue</title>
+  <title>Python爬虫 | Blog of Sakurahuiyue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog of Sakurahuiyue">
-<meta property="og:url" content="http://example.com/tags/hexo/index.html">
+  <meta name="description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。  1.1.2 构成组件 1、route策略 2、render_template渲染  向页面传递基本变量 123456789@app.route(&amp;#x27;&#x2F;&amp;#x27;)def getIndex():    # 普通变量    time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫">
+<meta property="og:url" content="http://example.com/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/index.html">
 <meta property="og:site_name" content="Blog of Sakurahuiyue">
+<meta property="og:description" content="数据可视化1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。  1.1.2 构成组件 1、route策略 2、render_template渲染  向页面传递基本变量 123456789@app.route(&amp;#x27;&#x2F;&amp;#x27;)def getIndex():    # 普通变量    time">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-27T02:43:15.000Z">
+<meta property="article:modified_time" content="2021-07-27T08:14:38.423Z">
 <meta property="article:author" content="Sakurahuiyue">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog of Sakurahuiyue" type="application/atom+xml">
@@ -165,106 +171,204 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据可视化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/01/hexo%E5%BB%BA%E7%AB%99%E4%B9%8Byilia%E4%B8%BB%E9%A2%98diy/" class="archive-article-date">
-  	<time datetime="2020-01-01T13:01:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/01/hexo%E5%BB%BA%E7%AB%99%E4%B9%8Byilia%E4%B8%BB%E9%A2%98diy/">hexo建站之yilia主题diy</a>
+    <h1 class="article-title" itemprop="name">
+      Python爬虫
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2021-07-27T02:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><h2 id="1-1-Flask框架"><a href="#1-1-Flask框架" class="headerlink" title="1.1 Flask框架"></a>1.1 Flask框架</h2><h3 id="1-1-1概述"><a href="#1-1-1概述" class="headerlink" title="1.1.1概述"></a>1.1.1概述</h3><blockquote>
+<p>Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。</p>
+</blockquote>
+<h3 id="1-1-2-构成组件"><a href="#1-1-2-构成组件" class="headerlink" title="1.1.2 构成组件"></a>1.1.2 构成组件</h3><blockquote>
+<p>1、route策略</p>
+<p>2、render_template渲染</p>
+</blockquote>
+<p><strong>向页面传递基本变量</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIndex</span>():</span></span><br><span class="line">    <span class="comment"># 普通变量</span></span><br><span class="line">    time = datetime.date.today()</span><br><span class="line">    <span class="comment"># 列表变量</span></span><br><span class="line">    nameList = [<span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Andy&quot;</span>, <span class="string">&quot;Tom&quot;</span>]</span><br><span class="line">    <span class="comment"># 字典变量</span></span><br><span class="line">    gradeDic = &#123;<span class="string">&quot;Amy&quot;</span>: <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Andy&quot;</span>: <span class="string">&quot;B&quot;</span>, <span class="string">&quot;Tom&quot;</span>: <span class="string">&quot;C&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, time=time, nameList=nameList, gradeDic=gradeDic)</span><br></pre></td></tr></table></figure>
+<p><strong>提交表单内容</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 表单提交</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/test/register&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRegister</span>():</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回结果</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/result&#x27;</span>, methods=[<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;GET&quot;</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getResult</span>():</span></span><br><span class="line">    print(<span class="string">&quot;requestType:&quot;</span> + request.method)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        result = request.form</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/result.html&quot;</span>, result=result)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;test/register.html&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">有趣的事</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据分析</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/01/hexo%E5%8D%9A%E5%AE%A2%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-01-01T02:21:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/21/Python%E7%88%AC%E8%99%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python爬虫</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/01/hexo%E5%8D%9A%E5%AE%A2%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA/">hexo建站之yilia主题diy</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">有趣的事</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">数据可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Flask%E6%A1%86%E6%9E%B6"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 Flask框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E6%9E%84%E6%88%90%E7%BB%84%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 构成组件</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+  <div id="SOHUCS" sid="数据可视化" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyvgg1vOv",
+        conf: "7e5f34d55d2133fa3cf942fded24e9a8"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -301,9 +405,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
