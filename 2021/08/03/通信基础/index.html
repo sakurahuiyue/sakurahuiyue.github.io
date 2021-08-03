@@ -6,23 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>世界坐标与屏幕坐标转换遇到的坑 | Blog of Sakurahuiyue</title>
+  <title>通信基础 | Blog of Sakurahuiyue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目场景：公司最近在做一个管控平台，需要将地图上的工人点用图标标记出来，涉及到世界坐标到屏幕坐标的转换问题">
+  <meta name="description" content="1.1基站基站一般分为室分站（即室内基站）和宏站（室外基站）。 1.1.1基站的演进 1G    BaseStation(BS)    AMPS和TACS    -&gt;基站的由来 2G    Base Transceiver Station(BTS)    -&gt;一体化基站 3G    NodeB    -&gt;BBU与RRU分离，两者通过通过通用公共无线电接口（CPRI）和开放式基站标">
 <meta property="og:type" content="article">
-<meta property="og:title" content="世界坐标与屏幕坐标转换遇到的坑">
-<meta property="og:url" content="http://example.com/2019/11/16/%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/index.html">
+<meta property="og:title" content="通信基础">
+<meta property="og:url" content="http://example.com/2021/08/03/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Blog of Sakurahuiyue">
-<meta property="og:description" content="项目场景：公司最近在做一个管控平台，需要将地图上的工人点用图标标记出来，涉及到世界坐标到屏幕坐标的转换问题">
+<meta property="og:description" content="1.1基站基站一般分为室分站（即室内基站）和宏站（室外基站）。 1.1.1基站的演进 1G    BaseStation(BS)    AMPS和TACS    -&gt;基站的由来 2G    Base Transceiver Station(BTS)    -&gt;一体化基站 3G    NodeB    -&gt;BBU与RRU分离，两者通过通过通用公共无线电接口（CPRI）和开放式基站标">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200909222427467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5MjYzOTA4,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2019-11-16T12:24:53.000Z">
-<meta property="article:modified_time" content="2021-01-17T10:32:00.283Z">
+<meta property="article:published_time" content="2021-08-03T00:43:10.000Z">
+<meta property="article:modified_time" content="2021-08-03T06:08:06.827Z">
 <meta property="article:author" content="Sakurahuiyue">
-<meta property="article:tag" content="Unity3d">
-<meta property="article:tag" content="疑难杂症">
+<meta property="article:tag" content="通信业务">
+<meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200909222427467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5MjYzOTA4,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Blog of Sakurahuiyue" type="application/atom+xml">
   
@@ -173,47 +171,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-世界坐标与屏幕坐标转换遇到的坑" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-通信基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      世界坐标与屏幕坐标转换遇到的坑
+      通信基础
     </h1>
   
 
         
-        <a href="/2019/11/16/%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/" class="archive-article-date">
-  	<time datetime="2019-11-16T12:24:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
+        <a href="/2021/08/03/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2021-08-03T00:43:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="项目场景："><a href="#项目场景：" class="headerlink" title="项目场景："></a>项目场景：</h1><p><font color=#999AAA >公司最近在做一个管控平台，需要将地图上的工人点用图标标记出来，涉及到世界坐标到屏幕坐标的转换问题</font></p>
+        <h2 id="1-1基站"><a href="#1-1基站" class="headerlink" title="1.1基站"></a>1.1基站</h2><p>基站一般分为室分站（即室内基站）和宏站（室外基站）。</p>
+<h3 id="1-1-1基站的演进"><a href="#1-1-1基站的演进" class="headerlink" title="1.1.1基站的演进"></a>1.1.1基站的演进</h3><blockquote>
+<p>1G    BaseStation(BS)    AMPS和TACS    -&gt;基站的由来</p>
+<p>2G    Base Transceiver Station(BTS)    -&gt;一体化基站</p>
+<p>3G    NodeB    -&gt;BBU与RRU分离，两者通过通过通用公共无线电接口（CPRI）和开放式基站标准计                划（ OBSAI）连接，BBU和RRU实现一对多提供基带资源池</p>
+<p>4G    eNodeB    -&gt;SingleRAN,实现了一套设备融合了2G/3G/4G多种标准制式</p>
+<p>5G    gNodeB    -&gt;重构为CU（中央单元）+DU（分布式单元）+AAU/RRU（远端射频单元）</p>
+</blockquote>
 <a id="more"></a>
 
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-<!-- more -->
-
-<h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p><font color=#999AAA >常规世界坐标转屏幕,也是提及的最多的：</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//常规转化</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetScreenPos</span>(<span class="params">Vector3 targetPos,Image img</span>)</span>&#123;</span><br><span class="line">    Vector3 screenPos=Camera.main.WorldToScreenPoint(targetPos);</span><br><span class="line">    Canvas canvas = FindObjectOfType&lt;Canvas&gt;();</span><br><span class="line">    Debug.Log(screenPos);</span><br><span class="line">    img.transform.position=<span class="keyword">new</span> Vector3(screenPos.x,screenPos.y,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
- </font>
-
-
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-
-
-<p><font color=#999AAA >这里由于我对Canvas做了自适应设置，调整了CanvasScaler的参数设置，导致转换成的屏幕坐标并非正确的坐标。</font><br><img src="https://img-blog.csdnimg.cn/20200909222427467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5MjYzOTA4,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><p><font color=#999AAA >“WorldToScreenPoint ，通过它转换出的坐标是基于屏幕分辨率的，那么想要转换成Canvas上的坐标，由于Canvas Scaler的影响，就需要进一步计算，而计算所用的宽和高，就不能用参考分辨率的，要是用经过Canvas Scaler处理过的宽和高”。<br>引自<a target="_blank" rel="noopener" href="https://blog.csdn.net/Gao_sun/article/details/108262088?utm_source=app###">Unity世界坐标转换屏幕坐标在自适应分辨率下的应用</a></p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//加入分辨率转化</span></span><br><span class="line">    <span class="comment">//无论是否修改了参数，都应将image的锚点置为left-bottom</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetScreenPos</span>(<span class="params">Vector3 targetPos,Image img</span>)</span>&#123;</span><br><span class="line">    Vector3 screenPos=Camera.main.WorldToScreenPoint(targetPos);</span><br><span class="line">    Canvas canvas = FindObjectOfType&lt;Canvas&gt;();</span><br><span class="line">    Debug.Log(screenPos);</span><br><span class="line">    RectTransform canvasRtm = canvas.GetComponent&lt;RectTransform&gt;();</span><br><span class="line">    Vector3 uguiPos = Vector3.zero;</span><br><span class="line">    uguiPos.x = screenPos.x * canvasRtm.sizeDelta.x / Screen.width;</span><br><span class="line">    uguiPos.y = screenPos.y * canvasRtm.sizeDelta.y / Screen.height;</span><br><span class="line">    img.transform.position=uguiPos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-1-2基站天线"><a href="#1-1-2基站天线" class="headerlink" title="1.1.2基站天线"></a>1.1.2基站天线</h3><p><strong>基站天线</strong>，是基站<strong>天馈系统</strong>的组成部分，其可以分为室内天线和室外天线-</p>
+<blockquote>
+<p><strong>室内</strong>    -全向吸顶天线</p>
+<p>​        -定向壁挂天线</p>
+<p><strong>室外</strong>    -全向</p>
+<p>​        <strong>-定向（应用较广）</strong> -&gt;板状天线</p>
+<p>​            -定向单极化</p>
+<p>​            -定向双极化</p>
+<p>ps：在传统全向天线的基础上，增加振子的数量可以提升其信号的发射距离，并通过在一侧增加发射板的方式对其进行聚焦，即是板状天线的雏形。</p>
+</blockquote>
+<p><strong>天线信号调整方式</strong></p>
+<blockquote>
+<p><strong>机械下倾</strong></p>
+<p>天线垂直分量和水平分量的幅值不变，天线方向图严重变形 </p>
+<p><strong>电下倾</strong></p>
+<p>电下倾的天线方向图变化不大，下倾度数更大，而且，前瓣和后瓣都朝下</p>
+</blockquote>
+<p>而在实际使用中，经常会<strong>机械下倾和电调下倾配合使用</strong>。</p>
+<p><strong>新的问题？</strong></p>
+<blockquote>
+<p>-主瓣和下旁瓣之间，有一个<strong>下部零深</strong>，会造成这个位置的<strong>信号盲区</strong>，即“灯下黑”</p>
+<p>-上旁瓣的角度较高，影响距离较远，很容易造成<strong>越区干扰</strong></p>
+<p>​    因而需要尽可能地<strong>填补“下部零深”的空缺</strong>，<strong>压制“上旁瓣”的强度</strong>，例如调节旁瓣的电平，采用波束赋形等手段</p>
+</blockquote>
+<h3 id="1-2-3小区-扇区-载频"><a href="#1-2-3小区-扇区-载频" class="headerlink" title="1.2.3小区 扇区 载频"></a>1.2.3小区 扇区 载频</h3><p><strong>扇区</strong>    覆盖一定地理区域的无线覆盖区，是<strong>对无线覆盖区域的划分</strong>。</p>
+<blockquote>
+<p>扇区为地理意义上地定义，1个宏站会打出三片扇区，但并<strong>不等于三个小区</strong>，小区地划分与载波相关，例如在同一扇区上使用载波1的是一个小区C1,使用载波2是一个小区C2，此时两个小区对应着同一扇区。</p>
+</blockquote>
+<p><strong>扇区与载波的关系</strong>    每个扇区使用1-n个无线载波完成无线覆盖，每个无限载波使用某一载波频点。</p>
+<p>也就是说，<strong>扇区和载波</strong>共同组成了提供UE接入的最小单位，即<strong>小区</strong>。</p>
+<p><strong>小区</strong>    <strong>为用户提供无线通信业务的一片区域</strong>，是无线网络的基本组成单位。</p>
+<blockquote>
+<p>基站支持的小区数 = 扇区数 * 每扇区载频数</p>
+</blockquote>
 
       
 
@@ -248,11 +269,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Unity3d</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">通信业务</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">疑难杂症</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
         		</li>
       		
 		</ul>
@@ -308,7 +329,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/11/16/%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/08/03/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +343,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/01/hexo%E5%8D%9A%E5%AE%A2%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo建站之yilia主题diy
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/15/Unity%E4%B8%AD%E5%AF%B9%E6%9F%90%E4%B8%AA%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96%E8%BF%9B%E8%A1%8C%E7%9B%91%E5%90%AC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Unity中对某个值的变化进行监听</div>
+    <a href="/2021/07/27/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据可视化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +372,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">项目场景：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">解决方案：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E5%9F%BA%E7%AB%99"><span class="toc-number">1.</span> <span class="toc-text">1.1基站</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1%E5%9F%BA%E7%AB%99%E7%9A%84%E6%BC%94%E8%BF%9B"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.1基站的演进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2%E5%9F%BA%E7%AB%99%E5%A4%A9%E7%BA%BF"><span class="toc-number">1.2.</span> <span class="toc-text">1.1.2基站天线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3%E5%B0%8F%E5%8C%BA-%E6%89%87%E5%8C%BA-%E8%BD%BD%E9%A2%91"><span class="toc-number">1.3.</span> <span class="toc-text">1.2.3小区 扇区 载频</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -376,7 +388,7 @@
   
 
   
-  <div id="SOHUCS" sid="世界坐标与屏幕坐标转换遇到的坑" ></div> 
+  <div id="SOHUCS" sid="通信基础" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({

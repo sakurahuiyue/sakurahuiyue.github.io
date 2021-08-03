@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.1 Flask框架1.1.1概述 Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-27T02:43:15.000Z">
-<meta property="article:modified_time" content="2021-07-27T14:56:59.765Z">
+<meta property="article:modified_time" content="2021-07-28T03:20:57.133Z">
 <meta property="article:author" content="Sakurahuiyue">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="数据分析">
@@ -197,8 +197,8 @@
 <a id="more"></a>
 
 <h3 id="1-1-2-构成组件"><a href="#1-1-2-构成组件" class="headerlink" title="1.1.2 构成组件"></a>1.1.2 构成组件</h3><blockquote>
-<p>1、route策略</p>
-<p>2、render_template渲染</p>
+<p>1、route策略解析</p>
+<p>2、render_template模板渲染</p>
 </blockquote>
 <p><strong>向页面传递基本变量</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIndex</span>():</span></span><br><span class="line">    <span class="comment"># 普通变量</span></span><br><span class="line">    time = datetime.date.today()</span><br><span class="line">    <span class="comment"># 列表变量</span></span><br><span class="line">    nameList = [<span class="string">&quot;Amy&quot;</span>, <span class="string">&quot;Andy&quot;</span>, <span class="string">&quot;Tom&quot;</span>]</span><br><span class="line">    <span class="comment"># 字典变量</span></span><br><span class="line">    gradeDic = &#123;<span class="string">&quot;Amy&quot;</span>: <span class="string">&quot;A&quot;</span>, <span class="string">&quot;Andy&quot;</span>: <span class="string">&quot;B&quot;</span>, <span class="string">&quot;Tom&quot;</span>: <span class="string">&quot;C&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>, time=time, nameList=nameList, gradeDic=gradeDic)</span><br></pre></td></tr></table></figure>
@@ -314,6 +314,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/08/03/%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          通信基础
+        
+      </div>
+    </a>
   
   
     <a href="/2021/07/21/Python%E7%88%AC%E8%99%AB/" id="article-nav-older" class="article-nav-link-wrap">
@@ -514,6 +523,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">通信业务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
             
             <div class="clearfix"></div>
